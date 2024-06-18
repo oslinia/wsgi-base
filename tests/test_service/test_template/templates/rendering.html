@@ -1,0 +1,15 @@
+{% extends "template/rendering.html" %}
+{% block title %}{{ title }}{% endblock %}
+{% block head %}{{ super() }}
+    <link rel="stylesheet" href="{{ url_file('replace.css') }}">
+{%- endblock %}
+{% block content %}{{ super() }}
+    <ul class="menu">
+        <li><a href="{{ url_for('index') }}">Homepage</a></li>
+        <li><a href="{{ url_for('query', 'query') }}">Query page</a></li>
+        <li><a href="{{ url_for('query', 'one=one value', 'two=two value') }}">Query params</a></li>
+        <li><a href="{{ url_for('page', name='test.html') }}">Page test</a></li>
+        <li><a href="{{ url_for('page', 'query=value', name='query.html') }}">Page query</a></li>
+    </ul>
+{% endblock %}
+{% block name %}Replace title {{ date|rus }}{% endblock %}

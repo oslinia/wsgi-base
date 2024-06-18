@@ -1,0 +1,9 @@
+{% extends "template/template.html" %}
+{% block title %}Raw page{% endblock %}
+{% block head %}{{ super() }}
+    <link rel="stylesheet" href="template/style.css">
+{%- endblock %}
+{% block content %}{{ super() }}
+    <p class="important">Welcome! Raw page.</p>
+{% endblock %}
+{% block name %}Raw title{% endblock %}
